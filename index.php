@@ -2,15 +2,7 @@
   require './database/connection.php';
 
   session_start();
-
-  if ($_SESSION['teacher-status'] == 'invalid' || empty($_SESSION['teacher-status'])) {
-    $_SESSION['teacher-status'] = 'invalid';
-  }
-
-  if ($_SESSION['teacher-status'] == 'valid') {
-    echo header('Location: mainpage.php');
-  }
-
+  
   if (isset($_POST['login'])) {
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
